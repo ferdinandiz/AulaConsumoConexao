@@ -13,11 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
@@ -69,9 +67,6 @@ public class PessoaController {
 
             ObjectMapper objectMapper = new ObjectMapper();
             pessoas = objectMapper.readValue(reposta.toString(), new TypeReference<List<Pessoa>>(){});
-//            for (Pessoa p : pessoas) {
-//                System.err.println(p.getNome());
-//            }
 
             ObservableList<String> nomes = FXCollections.observableArrayList();
             for (Pessoa p : pessoas) {
